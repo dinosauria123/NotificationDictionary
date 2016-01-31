@@ -59,11 +59,18 @@ public class MainActivity extends Activity {
 
         }
 
-        else if (model.equals("KFAPWA")|model.equals("KFAPWI")|model.equals("KFTHWA")|model.equals("KFTHWI")) {   //  Kindle File HDX (2013)
+        else if (model.equals("KFAPWA")|model.equals("KFAPWI")) {   //  Kindle File HDX 8.9inch (2013)
 
            file1 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/dictionaries/Shogagkukan_JJ.mobi");
            file2 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/dictionaries/Shogakukan_EJ.mobi");
            file3 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/Books/B003ODIZL6/B003ODIZL6_EBOK.prc");
+        }
+
+        else if (model.equals("KFTHWA")|model.equals("KFTHWI")) {   //  Kindle File HDX 7inch (2013)
+
+            file1 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/Books/B005FNK020/B005FNK020_EBOK.prc");
+            file2 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/Books/B005FNK002/B005FNK002_EBOK.prc");
+            file3 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/Books/B003WUYRGI/B003WUYRGI_EBOK.prc");
         }
 
         else {
