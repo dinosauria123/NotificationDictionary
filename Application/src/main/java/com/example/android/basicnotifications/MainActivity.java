@@ -59,7 +59,7 @@ public class MainActivity extends Activity {
 
         }
 
-        else if (model.equals("KFAPWA"+"KFAPWI"+"KFTHWA"+"KFTHWI")) {   //  Kindle File HDX (2013)
+        else if (model.equals("KFAPWA")|model.equals("KFAPWI")|model.equals("KFTHWA")|model.equals("KFTHWI")) {   //  Kindle File HDX (2013)
 
            file1 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/dictionaries/Shogagkukan_JJ.mobi");
            file2 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/dictionaries/Shogakukan_EJ.mobi");
