@@ -16,13 +16,6 @@
         <dex dex="C:\Users\dinos\AndroidStudioProjects\BasicNotifications1\Application\build\intermediates\pre-dexed\debug\classes-8fc5b34a7c3d1c6aeb0bc68c30f40ec203589fea.jar" />
     </item>
     <item
-        jar="C:\Users\dinos\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.1.0\support-annotations-23.1.0.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="92e3fc113ec3ee36b64603a38857b95700025633">
-        <dex dex="C:\Users\dinos\AndroidStudioProjects\BasicNotifications1\Application\build\intermediates\pre-dexed\debug\support-annotations-23.1.0-3504ca8e752d20c53a90734f23bf6fd4e0a50a26.jar" />
-    </item>
-    <item
         jar="C:\Users\dinos\AndroidStudioProjects\BasicNotifications1\Application\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.2"
@@ -35,6 +28,13 @@
         revision="23.0.2"
         sha1="3713f30726299231eddfb206043ebb72a2519b6f">
         <dex dex="C:\Users\dinos\AndroidStudioProjects\BasicNotifications1\Application\build\intermediates\pre-dexed\debug\classes-e8694d9f58d52f1c3de925966b42439f2886199f.jar" />
+    </item>
+    <item
+        jar="C:\Users\dinos\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.1.0\support-annotations-23.1.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="92e3fc113ec3ee36b64603a38857b95700025633">
+        <dex dex="C:\Users\dinos\AndroidStudioProjects\BasicNotifications1\Application\build\intermediates\pre-dexed\debug\support-annotations-23.1.0-3504ca8e752d20c53a90734f23bf6fd4e0a50a26.jar" />
     </item>
 
 </items>

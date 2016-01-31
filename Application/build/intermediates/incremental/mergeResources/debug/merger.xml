@@ -20,7 +20,7 @@
             
         
         ]]>
-    </string><string name="app_name">BasicNotifications</string></file><file path="C:\Users\dinos\AndroidStudioProjects\BasicNotifications1\Application\src\main\res\values\strings.xml" qualifiers=""><string name="description">
+    </string><string name="app_name">NotificationsDictionary</string></file><file path="C:\Users\dinos\AndroidStudioProjects\BasicNotifications1\Application\src\main\res\values\strings.xml" qualifiers=""><string name="description">
         このアプリは通知領域からAmazon Fireの内蔵辞書をよびだします。\n\n
         あらかじめ大辞泉、プログレッシブ英和中辞典をダウンロードしてください。\n\n
         内蔵辞書をダウンロードするには日本語、あるいは英語の本をダウンロードして 適当な単語をタップしてください。\n\n

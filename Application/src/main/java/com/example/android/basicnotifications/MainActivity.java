@@ -6,12 +6,16 @@ import android.app.PendingIntent;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 
 import java.io.File;
+
+
+
 
 /**
  * The entry point to the BasicNotification sample.
@@ -41,9 +45,36 @@ public class MainActivity extends Activity {
          * notification service can fire it on our behalf.
          */
 
-        File file1 = new File("/storage/emulated/0/Android/data/com.amazon.kindle/files/dictionaries/B005FNK020_JP-JP.mobi");
-        File file2 = new File("/storage/emulated/0/Android/data/com.amazon.kindle/files/dictionaries/B005FNK002_Shogakukan_EJ.mobi");
-        File file3 = new File("/storage/emulated/0/Android/data/com.amazon.kindle/files/dictionaries/B003WUYRGI_ODE_KCP.mobi");
+        File file1;
+        File file2;
+        File file3;
+
+        final String model = Build.MODEL;
+
+        if (model.equals("KFFOWI")) {    //  Kindle File (2015)
+
+           file1 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/dictionaries/B005FNK020_JP-JP.mobi");
+           file2 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/dictionaries/B005FNK002_Shogakukan_EJ.mobi");
+           file3 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/dictionaries/B003WUYRGI_ODE_KCP.mobi");
+
+        }
+
+        else if (model.equals("KFAPWA"+"KFAPWI"+"KFTHWA"+"KFTHWI")) {   //  Kindle File HDX (2013)
+
+           file1 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/dictionaries/Shogagkukan_JJ.mobi");
+           file2 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/dictionaries/Shogakukan_EJ.mobi");
+           file3 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/Books/B003ODIZL6/B003ODIZL6_EBOK.prc");
+        }
+
+        else {
+
+            file1 = new File("");
+            file2 = new File("");
+            file3 = new File("");
+
+        }
+
+
 
         Intent intent1 = new Intent();
         Intent intent2 = new Intent();
@@ -139,4 +170,5 @@ public class MainActivity extends Activity {
         // END_INCLUDE(send_notification)
         this.finish();
     }
+
 }

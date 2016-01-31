@@ -26,7 +26,7 @@
     <dimen name="vertical_page_margin">@dimen/margin_medium</dimen>
     <!-- From: file:/C:/Users/dinos/AndroidStudioProjects/BasicNotifications1/Application/src/main/res/values/base-strings.xml -->
     <eat-comment/>
-    <string name="app_name">BasicNotifications</string>
+    <string name="app_name">NotificationsDictionary</string>
     <!-- From: file:/C:/Users/dinos/AndroidStudioProjects/BasicNotifications1/Application/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="description">
