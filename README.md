@@ -1,3 +1,8 @@
+NotificationDictionary is an application to call dictionary from notification area.
+It works on Amazon Kindle Fire (2015).
+This program is based on Android BasicNotifications Sample.
+
+
 
 Android BasicNotifications Sample
 ===================================
