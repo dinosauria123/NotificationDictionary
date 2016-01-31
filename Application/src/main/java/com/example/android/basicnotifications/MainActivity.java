@@ -74,8 +74,6 @@ public class MainActivity extends Activity {
 
         }
 
-
-
         Intent intent1 = new Intent();
         Intent intent2 = new Intent();
         Intent intent3 = new Intent();
