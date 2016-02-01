@@ -1,20 +1,21 @@
 package com.example.android.basicnotifications;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v4.app.NotificationCompat;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 
 import java.io.File;
-
-
 
 
 /**
@@ -28,12 +29,39 @@ public class MainActivity extends Activity {
      */
 //    public static final int NOTIFICATION_ID = 1;
 
+
+    String model = Build.MODEL;
+
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sample_layout);
 
-    }
+        String path = Environment.getExternalStorageDirectory().toString()+"/Android/data/com.amazon.kindle/files/dictionaries";
+        File f = new File(path);
+        File files[] = f.listFiles();
+        String datafile = " ";
 
+        if(files != null) {
+            for(int i = 0; i < files.length; i++) {
+                if (files[i].isFile()) {
+                    datafile = datafile + files[i].getName()+"\n ";
+                }
+            }
+        }
+
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+        alertDialogBuilder.setTitle("端末情報");
+        alertDialogBuilder.setMessage("Fireモデル名 "+ model + "\n辞書ファイル \n"+datafile);
+        alertDialogBuilder.setPositiveButton("OK",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                });
+        AlertDialog alertDialog = alertDialogBuilder.create();
+        alertDialog.show();
+    }
     /**
      * Send a sample notification using the NotificationCompat API.
      */
@@ -49,8 +77,6 @@ public class MainActivity extends Activity {
         File file2;
         File file3;
         File file4;
-
-        final String model = Build.MODEL;
 
         if (model.equals("KFFOWI")) {    //  Kindle File (2015)
 
