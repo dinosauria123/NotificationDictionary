@@ -48,6 +48,7 @@ public class MainActivity extends Activity {
         File file1;
         File file2;
         File file3;
+        File file4;
 
         final String model = Build.MODEL;
 
@@ -55,7 +56,8 @@ public class MainActivity extends Activity {
 
            file1 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/dictionaries/B005FNK020_JP-JP.mobi");
            file2 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/dictionaries/B005FNK002_Shogakukan_EJ.mobi");
-           file3 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/dictionaries/B003WUYRGI_ODE_KCP.mobi");
+           file3 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/Books/B00DQB1G3K/B00DQB1G3K_EBOK.prc");
+           file4 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/dictionaries/B003WUYRGI_ODE_KCP.mobi");
 
         }
 
@@ -63,14 +65,17 @@ public class MainActivity extends Activity {
 
            file1 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/dictionaries/Shogagkukan_JJ.mobi");
            file2 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/dictionaries/Shogakukan_EJ.mobi");
-           file3 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/Books/B003ODIZL6/B003ODIZL6_EBOK.prc");
+           file3 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/Books/B00DQB1G3K/B00DQB1G3K_EBOK.prc");
+           file4 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/dictionaries/B003WUYRGI_ODE_KCP.mobi");
+
         }
 
         else if (model.equals("KFTHWA")|model.equals("KFTHWI")) {   //  Kindle File HDX 7inch (2013)
 
             file1 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/Books/B005FNK020/B005FNK020_EBOK.prc");
             file2 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/Books/B005FNK002/B005FNK002_EBOK.prc");
-            file3 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/Books/B003WUYRGI/B003WUYRGI_EBOK.prc");
+            file3 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/Books/B00DQB1G3K/B00DQB1G3K_EBOK.prc");
+            file4 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/dictionaries/B003WUYRGI_ODE_KCP.mobi");
         }
 
         else {
@@ -78,32 +83,40 @@ public class MainActivity extends Activity {
             file1 = new File("");
             file2 = new File("");
             file3 = new File("");
+            file4 = new File("");
 
         }
 
         Intent intent1 = new Intent();
         Intent intent2 = new Intent();
         Intent intent3 = new Intent();
+        Intent intent4 = new Intent();
 
 
         intent1.setAction(Intent.ACTION_VIEW);
         intent2.setAction(Intent.ACTION_VIEW);
         intent3.setAction(Intent.ACTION_VIEW);
+        intent4.setAction(Intent.ACTION_VIEW);
 
         Uri uri1 = Uri.fromFile(file1);
         Uri uri2 = Uri.fromFile(file2);
         Uri uri3 = Uri.fromFile(file3);
+        Uri uri4 = Uri.fromFile(file4);
+
         //拡張子
         String extention = MimeTypeMap.getFileExtensionFromUrl("file://" + file1);
         //mime type
         String mimetype =MimeTypeMap.getSingleton().getMimeTypeFromExtension(extention);
+
         intent1.setDataAndType(uri1,mimetype);
         intent2.setDataAndType(uri2,mimetype);
         intent3.setDataAndType(uri3,mimetype);
+        intent4.setDataAndType(uri4,mimetype);
 
         PendingIntent pendingIntent1 = PendingIntent.getActivity(this, 0, intent1, 0);
         PendingIntent pendingIntent2 = PendingIntent.getActivity(this, 0, intent2, 0);
         PendingIntent pendingIntent3 = PendingIntent.getActivity(this, 0, intent3, 0);
+        PendingIntent pendingIntent4 = PendingIntent.getActivity(this, 0, intent4, 0);
         // END_INCLUDE(build_action)
 
         // BEGIN_INCLUDE (build_notification)
@@ -113,6 +126,7 @@ public class MainActivity extends Activity {
         NotificationCompat.Builder builder1 = new NotificationCompat.Builder(this);
         NotificationCompat.Builder builder2 = new NotificationCompat.Builder(this);
         NotificationCompat.Builder builder3 = new NotificationCompat.Builder(this);
+        NotificationCompat.Builder builder4 = new NotificationCompat.Builder(this);
 
         /** Set the icon that will appear in the notification bar. This icon also appears
          * in the lower right hand corner of the notification itself.
@@ -125,11 +139,13 @@ public class MainActivity extends Activity {
         builder1.setSmallIcon(R.drawable.ic_stat_notification);
         builder2.setSmallIcon(R.drawable.ic_stat_notification);
         builder3.setSmallIcon(R.drawable.ic_stat_notification);
+        builder4.setSmallIcon(R.drawable.ic_stat_notification);
 
         // Set the intent that will fire when the user taps the notification.
         builder1.setContentIntent(pendingIntent1);
         builder2.setContentIntent(pendingIntent2);
         builder3.setContentIntent(pendingIntent3);
+        builder4.setContentIntent(pendingIntent4);
 
         // Set the notification to auto-cancel. This means that the notification will disappear
         // after the user taps it, rather than remaining until it's explicitly dismissed.
@@ -144,6 +160,7 @@ public class MainActivity extends Activity {
         builder1.setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher));
         builder2.setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher));
         builder3.setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher));
+        builder4.setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher));
 
         /**
          * Set the text of the notification. This sample sets the three most commononly used
@@ -156,7 +173,8 @@ public class MainActivity extends Activity {
          */
         builder1.setContentTitle("小学館 デジタル大辞泉");
         builder2.setContentTitle("小学館 プログレッシブ英和中辞典");
-        builder3.setContentTitle("Oxford Dictionary of English");
+        builder3.setContentTitle("小学館 プログレッシブ和英中辞典");
+        builder4.setContentTitle("Oxford Dictionary of English");
         //   builder.setContentText("Time to learn about notifications!");
         //   builder.setSubText("Tap to view documentation about notifications.");
 
@@ -172,6 +190,7 @@ public class MainActivity extends Activity {
         notificationManager.notify(1, builder1.build());
         notificationManager.notify(2, builder2.build());
         notificationManager.notify(3, builder3.build());
+        notificationManager.notify(4, builder4.build());
         // END_INCLUDE(send_notification)
         this.finish();
     }

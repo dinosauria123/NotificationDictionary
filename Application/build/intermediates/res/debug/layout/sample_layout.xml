@@ -40,4 +40,4 @@ limitations under the License.
         android:onClick="sendNotification"/>
 
 </LinearLayout>
-<!-- From: file:/C:/Users/dinos/AndroidStudioProjects/BasicNotifications1/Application/src/main/res/layout/sample_layout.xml -->
+<!-- From: file:/C:/Users/dino/AndroidStudioProjects/NotificationDictionary/Application/src/main/res/layout/sample_layout.xml -->
