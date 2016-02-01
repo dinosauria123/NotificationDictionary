@@ -22,7 +22,7 @@
         ]]>
     </string></file><file path="C:\Users\dino\AndroidStudioProjects\NotificationDictionary\Application\src\main\res\values\strings.xml" qualifiers=""><string name="description">
         このアプリは通知領域からAmazon Fireの内蔵辞書をよびだします。\n\n
-        あらかじめ大辞泉、プログレッシブ英和中辞典をダウンロードしてください。\n\n
+        あらかじめ大辞泉、プログレッシブ英和中辞典、プログレッシブ和英中辞典、 Oxford Dictionary for English をダウンロードしてください。\n\n
         内蔵辞書をダウンロードするには日本語、あるいは英語の本をダウンロードして 適当な単語をタップしてください。\n\n
         下のボタンをタップすると通知領域に辞書名が表示されます。辞書名をタップすると 内蔵辞書が起動します。\n\n
     </string></file><file path="C:\Users\dino\AndroidStudioProjects\NotificationDictionary\Application\src\main\res\values\template-dimens.xml" qualifiers=""><dimen name="margin_huge">64dp</dimen><dimen name="margin_tiny">4dp</dimen><dimen name="horizontal_page_margin">@dimen/margin_medium</dimen><dimen name="margin_large">32dp</dimen><dimen name="margin_medium">16dp</dimen><dimen name="vertical_page_margin">@dimen/margin_medium</dimen><dimen name="margin_small">8dp</dimen></file><file path="C:\Users\dino\AndroidStudioProjects\NotificationDictionary\Application\src\main\res\values\template-styles.xml" qualifiers=""><style name="Widget"/><style name="Widget.SampleMessage">
