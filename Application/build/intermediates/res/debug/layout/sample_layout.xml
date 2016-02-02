@@ -39,5 +39,13 @@ limitations under the License.
         android:layout_gravity="center"
         android:onClick="sendNotification"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="設定"
+        android:id="@+id/button2"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1" />
+
 </LinearLayout>
-<!-- From: file:/C:/Users/dinos/AndroidStudioProjects/BasicNotifications1/Application/src/main/res/layout/sample_layout.xml -->
+<!-- From: file:/C:/Users/dinos/AndroidStudioProjects/NotificationDictionary2/Application/src/main/res/layout/sample_layout.xml -->

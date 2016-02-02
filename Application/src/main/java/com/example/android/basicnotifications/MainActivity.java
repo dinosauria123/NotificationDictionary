@@ -14,6 +14,8 @@ import android.os.Environment;
 import android.support.v4.app.NotificationCompat;
 import android.view.View;
 import android.webkit.MimeTypeMap;
+import android.widget.Button;
+import android.widget.Toast;
 
 import java.io.File;
 
@@ -37,22 +39,51 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sample_layout);
 
-        String path = Environment.getExternalStorageDirectory().toString()+"/Android/data/com.amazon.kindle/files/dictionaries";
+        Button dirChooserButton = (Button) findViewById(R.id.button2);
+        dirChooserButton.setOnClickListener(new View.OnClickListener() {
+            private String m_chosenDir = "";
+            private boolean m_newFolderEnabled = true;
+
+            @Override
+            public void onClick(View v) {
+                // Create DirectoryChooserDialog and register a callback
+                DirectoryChooserDialog directoryChooserDialog =
+                        new DirectoryChooserDialog(MainActivity.this,
+                                new DirectoryChooserDialog.ChosenDirectoryListener() {
+                                    @Override
+                                    public void onChosenDir(String chosenDir) {
+                                        m_chosenDir = chosenDir;
+                                        Toast.makeText(
+                                                MainActivity.this, "Chosen directory: " +
+                                                        chosenDir, Toast.LENGTH_LONG).show();
+                                    }
+                                });
+                // Toggle new folder button enabling
+                directoryChooserDialog.setNewFolderEnabled(m_newFolderEnabled);
+                // Load directory chooser dialog for initial 'm_chosenDir' directory.
+                // The registered callback will be called upon final directory selection.
+                directoryChooserDialog.chooseDirectory(m_chosenDir);
+                m_newFolderEnabled = !m_newFolderEnabled;
+            }
+        });
+
+
+        String path = Environment.getExternalStorageDirectory().toString() + "/Android/data/com.amazon.kindle/files/dictionaries";
         File f = new File(path);
         File files[] = f.listFiles();
         String datafile = " ";
 
-        if(files != null) {
-            for(int i = 0; i < files.length; i++) {
+        if (files != null) {
+            for (int i = 0; i < files.length; i++) {
                 if (files[i].isFile()) {
-                    datafile = datafile + files[i].getName()+"\n ";
+                    datafile = datafile + files[i].getName() + "\n ";
                 }
             }
         }
 
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
         alertDialogBuilder.setTitle("端末情報");
-        alertDialogBuilder.setMessage("Fireモデル名 "+ model + "\n辞書ファイル \n"+datafile);
+        alertDialogBuilder.setMessage("Fireモデル名 " + model + "\n辞書ファイル \n" + datafile);
         alertDialogBuilder.setPositiveButton("OK",
                 new DialogInterface.OnClickListener() {
                     @Override
@@ -62,6 +93,7 @@ public class MainActivity extends Activity {
         AlertDialog alertDialog = alertDialogBuilder.create();
         alertDialog.show();
     }
+
     /**
      * Send a sample notification using the NotificationCompat API.
      */
@@ -80,31 +112,25 @@ public class MainActivity extends Activity {
 
         if (model.equals("KFFOWI")) {    //  Kindle File (2015)
 
-           file1 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/dictionaries/B005FNK020_JP-JP.mobi");
-           file2 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/dictionaries/B005FNK002_Shogakukan_EJ.mobi");
-           file3 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/Books/B00DQB1G3K/B00DQB1G3K_EBOK.prc");
-           file4 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/dictionaries/B003WUYRGI_ODE_KCP.mobi");
+            file1 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/dictionaries/B005FNK020_JP-JP.mobi");
+            file2 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/dictionaries/B005FNK002_Shogakukan_EJ.mobi");
+            file3 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/Books/B00DQB1G3K/B00DQB1G3K_EBOK.prc");
+            file4 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/dictionaries/B003WUYRGI_ODE_KCP.mobi");
 
-        }
+        } else if (model.equals("KFAPWA") | model.equals("KFAPWI")) {   //  Kindle File HDX 8.9inch (2013)
 
-        else if (model.equals("KFAPWA")|model.equals("KFAPWI")) {   //  Kindle File HDX 8.9inch (2013)
+            file1 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/dictionaries/Shogagkukan_JJ.mobi");
+            file2 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/dictionaries/Shogakukan_EJ.mobi");
+            file3 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/Books/B00DQB1G3K/B00DQB1G3K_EBOK.prc");
+            file4 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/dictionaries/B003WUYRGI_ODE_KCP.mobi");
 
-           file1 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/dictionaries/Shogagkukan_JJ.mobi");
-           file2 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/dictionaries/Shogakukan_EJ.mobi");
-           file3 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/Books/B00DQB1G3K/B00DQB1G3K_EBOK.prc");
-           file4 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/dictionaries/B003WUYRGI_ODE_KCP.mobi");
-
-        }
-
-        else if (model.equals("KFTHWA")|model.equals("KFTHWI")) {   //  Kindle File HDX 7inch (2013)
+        } else if (model.equals("KFTHWA") | model.equals("KFTHWI")) {   //  Kindle File HDX 7inch (2013)
 
             file1 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/Books/B005FNK020/B005FNK020_EBOK.prc");
             file2 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/Books/B005FNK002/B005FNK002_EBOK.prc");
             file3 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/Books/B00DQB1G3K/B00DQB1G3K_EBOK.prc");
             file4 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/dictionaries/B003WUYRGI_ODE_KCP.mobi");
-        }
-
-        else {
+        } else {
 
             file1 = new File("");
             file2 = new File("");
@@ -132,12 +158,12 @@ public class MainActivity extends Activity {
         //拡張子
         String extention = MimeTypeMap.getFileExtensionFromUrl("file://" + file1);
         //mime type
-        String mimetype =MimeTypeMap.getSingleton().getMimeTypeFromExtension(extention);
+        String mimetype = MimeTypeMap.getSingleton().getMimeTypeFromExtension(extention);
 
-        intent1.setDataAndType(uri1,mimetype);
-        intent2.setDataAndType(uri2,mimetype);
-        intent3.setDataAndType(uri3,mimetype);
-        intent4.setDataAndType(uri4,mimetype);
+        intent1.setDataAndType(uri1, mimetype);
+        intent2.setDataAndType(uri2, mimetype);
+        intent3.setDataAndType(uri3, mimetype);
+        intent4.setDataAndType(uri4, mimetype);
 
         PendingIntent pendingIntent1 = PendingIntent.getActivity(this, 0, intent1, 0);
         PendingIntent pendingIntent2 = PendingIntent.getActivity(this, 0, intent2, 0);
@@ -220,5 +246,4 @@ public class MainActivity extends Activity {
         // END_INCLUDE(send_notification)
         this.finish();
     }
-
 }

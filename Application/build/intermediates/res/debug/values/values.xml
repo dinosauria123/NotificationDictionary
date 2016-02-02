@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/C:/Users/dinos/AndroidStudioProjects/BasicNotifications1/Application/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.1.0/res/values/values.xml -->
+    <!-- From: file:/C:/Users/dinos/AndroidStudioProjects/NotificationDictionary2/Application/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.1.0/res/values/values.xml -->
     <eat-comment/>
     <color name="cardview_dark_background">#FF202020</color>
     <color name="cardview_light_background">#FFFAFAFA</color>
@@ -12,10 +12,10 @@
     <dimen name="cardview_compat_inset_shadow">1dp</dimen>
     <dimen name="cardview_default_elevation">2dp</dimen>
     <dimen name="cardview_default_radius">2dp</dimen>
-    <!-- From: file:/C:/Users/dinos/AndroidStudioProjects/BasicNotifications1/Application/build/intermediates/exploded-aar/com.android.support/gridlayout-v7/23.1.0/res/values/values.xml -->
+    <!-- From: file:/C:/Users/dinos/AndroidStudioProjects/NotificationDictionary2/Application/build/intermediates/exploded-aar/com.android.support/gridlayout-v7/23.1.0/res/values/values.xml -->
     <eat-comment/>
     <dimen name="default_gap">8dip</dimen>
-    <!-- From: file:/C:/Users/dinos/AndroidStudioProjects/BasicNotifications1/Application/src/main/res/values/template-dimens.xml -->
+    <!-- From: file:/C:/Users/dinos/AndroidStudioProjects/NotificationDictionary2/Application/src/main/res/values/template-dimens.xml -->
     <eat-comment/>
     <dimen name="horizontal_page_margin">@dimen/margin_medium</dimen>
     <dimen name="margin_huge">64dp</dimen>
@@ -24,10 +24,10 @@
     <dimen name="margin_small">8dp</dimen>
     <dimen name="margin_tiny">4dp</dimen>
     <dimen name="vertical_page_margin">@dimen/margin_medium</dimen>
-    <!-- From: file:/C:/Users/dinos/AndroidStudioProjects/BasicNotifications1/Application/src/main/res/values/base-strings.xml -->
+    <!-- From: file:/C:/Users/dinos/AndroidStudioProjects/NotificationDictionary2/Application/src/main/res/values/base-strings.xml -->
     <eat-comment/>
     <string name="app_name">NotificationsDictionary</string>
-    <!-- From: file:/C:/Users/dinos/AndroidStudioProjects/BasicNotifications1/Application/src/main/res/values/strings.xml -->
+    <!-- From: file:/C:/Users/dinos/AndroidStudioProjects/NotificationDictionary2/Application/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="description">
         このアプリは通知領域からAmazon Fireの内蔵辞書をよびだします。\n\n
@@ -35,7 +35,7 @@
         内蔵辞書をダウンロードするには日本語、あるいは英語の本をダウンロードして 適当な単語をタップしてください。\n\n
         下のボタンをタップすると通知領域に辞書名が表示されます。辞書名をタップすると 内蔵辞書が起動します。\n\n
     </string>
-    <!-- From: file:/C:/Users/dinos/AndroidStudioProjects/BasicNotifications1/Application/src/main/res/values/base-strings.xml -->
+    <!-- From: file:/C:/Users/dinos/AndroidStudioProjects/NotificationDictionary2/Application/src/main/res/values/base-strings.xml -->
     <eat-comment/>
     <string name="intro_message">
         <![CDATA[
@@ -48,10 +48,10 @@
         
         ]]>
     </string>
-    <!-- From: file:/C:/Users/dinos/AndroidStudioProjects/BasicNotifications1/Application/src/main/res/values/template-styles.xml -->
+    <!-- From: file:/C:/Users/dinos/AndroidStudioProjects/NotificationDictionary2/Application/src/main/res/values/template-styles.xml -->
     <eat-comment/>
     <style name="AppTheme" parent="Theme.Sample"/>
-    <!-- From: file:/C:/Users/dinos/AndroidStudioProjects/BasicNotifications1/Application/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.1.0/res/values/values.xml -->
+    <!-- From: file:/C:/Users/dinos/AndroidStudioProjects/NotificationDictionary2/Application/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.1.0/res/values/values.xml -->
     <eat-comment/>
     <style name="CardView">
         <item name="cardBackgroundColor">@color/cardview_light_background</item>
@@ -67,7 +67,7 @@
     <style name="CardView.Light">
         <item name="cardBackgroundColor">@color/cardview_light_background</item>
     </style>
-    <!-- From: file:/C:/Users/dinos/AndroidStudioProjects/BasicNotifications1/Application/src/main/res/values/template-styles.xml -->
+    <!-- From: file:/C:/Users/dinos/AndroidStudioProjects/NotificationDictionary2/Application/src/main/res/values/template-styles.xml -->
     <eat-comment/>
     <style name="Theme.Base" parent="android:Theme.Light"/>
     <style name="Theme.Sample" parent="Theme.Base"/>
