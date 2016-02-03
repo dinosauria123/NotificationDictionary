@@ -39,12 +39,13 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sample_layout);
 
+//  ファイルディレクトリの表示
 // This codes comes from http://www.codeproject.com/Articles/547636/Android-Ready-to-use-simple
 
         Button dirChooserButton = (Button) findViewById(R.id.button2);
         dirChooserButton.setOnClickListener(new View.OnClickListener() {
             private String m_chosenDir = "";
-            private boolean m_newFolderEnabled = true;
+            private boolean m_newFolderEnabled = false;
 
             @Override
             public void onClick(View v) {
@@ -69,6 +70,7 @@ public class MainActivity extends Activity {
             }
         });
 
+//  端末情報の表示
 
         String path = Environment.getExternalStorageDirectory().toString() + "/Android/data/com.amazon.kindle/files/dictionaries";
         File f = new File(path);

@@ -51,7 +51,7 @@ public class DirectoryChooserDialog
     public DirectoryChooserDialog(Context context, ChosenDirectoryListener chosenDirectoryListener)
     {
         m_context = context;
-        m_sdcardDirectory = Environment.getExternalStorageDirectory().getAbsolutePath();
+        m_sdcardDirectory = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Android/data/com.amazon.kindle/files/";
         m_chosenDirectoryListener = chosenDirectoryListener;
 
         try
@@ -189,6 +189,8 @@ public class DirectoryChooserDialog
     private List<String> getDirectories(String dir)
     {
         List<String> dirs = new ArrayList<String>();
+        String filenameArray[] = null;
+        String extension = "";
 
         try
         {
@@ -200,9 +202,18 @@ public class DirectoryChooserDialog
 
             for (File file : dirFile.listFiles())
             {
-                if ( file.isDirectory() )
+                filenameArray = file.getName().split("\\.");
+                extension = filenameArray[filenameArray.length-1];
+
+                if ((!file.getName().toString().equals("cache"))
+                        && (!file.getName().toString().equals("explore"))
+                        && (!file.getName().toString().equals("medium" ))
+                        && (!file.getName().toString().equals("small"))
+                        && (!file.getName().toString().equals("tmpUpsell"))
+                        && file.isDirectory()
+                        || extension.equals("mobi") || extension.equals("prc") )
                 {
-                    dirs.add( file.getName() );
+                   dirs.add( file.getName() );
                 }
             }
         }
@@ -282,7 +293,7 @@ public class DirectoryChooserDialog
         }
 
         titleLayout.addView(m_titleView);
-        titleLayout.addView(newDirButton);
+//        titleLayout.addView(newDirButton);
 
         dialogBuilder.setCustomTitle(titleLayout);
 
