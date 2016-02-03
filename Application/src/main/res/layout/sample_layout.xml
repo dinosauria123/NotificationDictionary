@@ -34,7 +34,7 @@ limitations under the License.
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Do it!"
+        android:text="通知領域に辞書を表示する"
         android:id="@+id/button"
         android:layout_gravity="center"
         android:onClick="sendNotification"/>
@@ -42,8 +42,32 @@ limitations under the License.
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="設定"
+        android:text="国語辞書設定"
         android:id="@+id/button2"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="英和辞書設定"
+        android:id="@+id/button3"
+        android:layout_weight="1"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="和英辞書設定"
+        android:id="@+id/button4"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="英英辞書設定"
+        android:id="@+id/button5"
         android:layout_gravity="center_horizontal"
         android:layout_weight="1" />
 

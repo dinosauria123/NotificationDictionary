@@ -34,7 +34,7 @@ public class MainActivity extends Activity {
 //    public static final int NOTIFICATION_ID = 1;
 
 
-    String model = Build.MODEL;
+//    String model = Build.MODEL;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -44,10 +44,16 @@ public class MainActivity extends Activity {
 //  ファイルディレクトリの表示
 // This codes comes from http://www.codeproject.com/Articles/547636/Android-Ready-to-use-simple
 
-        Button dirChooserButton = (Button) findViewById(R.id.button2);
-        dirChooserButton.setOnClickListener(new View.OnClickListener() {
-            private String m_chosenDir = "";
-            private boolean m_newFolderEnabled = false;
+        Button dirChooserButton1 = (Button) findViewById(R.id.button2);
+        Button dirChooserButton2 = (Button) findViewById(R.id.button3);
+        Button dirChooserButton3 = (Button) findViewById(R.id.button4);
+        Button dirChooserButton4 = (Button) findViewById(R.id.button5);
+
+        dirChooserButton1.setOnClickListener(new View.OnClickListener() {
+            private String m_chosenDir1 = "";
+                     private boolean m_newFolderEnabled = false;
+            SharedPreferences pref = getSharedPreferences("config", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = pref.edit();
 
             @Override
             public void onClick(View v) {
@@ -57,28 +63,137 @@ public class MainActivity extends Activity {
                                 new DirectoryChooserDialog.ChosenDirectoryListener() {
                                     @Override
                                     public void onChosenDir(String chosenDir) {
-                                        m_chosenDir = chosenDir;
+                                        m_chosenDir1 = chosenDir;
                                         Toast.makeText(
                                                 MainActivity.this, "Chosen directory: " +
                                                         chosenDir, Toast.LENGTH_LONG).show();
+
+                                        editor.putString("JPDicPath", m_chosenDir1);
+                                        editor.commit();
                                     }
 
                                 });
+
                 // Toggle new folder button enabling
                 directoryChooserDialog.setNewFolderEnabled(m_newFolderEnabled);
                 // Load directory chooser dialog for initial 'm_chosenDir' directory.
                 // The registered callback will be called upon final directory selection.
-                directoryChooserDialog.chooseDirectory(m_chosenDir);
+                directoryChooserDialog.chooseDirectory(m_chosenDir1);
                 m_newFolderEnabled = !m_newFolderEnabled;
-
-                SharedPreferences pref = getSharedPreferences("config", Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = pref.edit();
-                editor.putString("JPDicPath",m_chosenDir.toString());
-                editor.commit();
             }
+
+
         });
 
-//  端末情報の表示
+        dirChooserButton2.setOnClickListener(new View.OnClickListener() {
+            private String m_chosenDir2 = "";
+            private boolean m_newFolderEnabled = false;
+            SharedPreferences pref = getSharedPreferences("config", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = pref.edit();
+
+            @Override
+            public void onClick(View v) {
+                // Create DirectoryChooserDialog and register a callback
+                DirectoryChooserDialog directoryChooserDialog =
+                        new DirectoryChooserDialog(MainActivity.this,
+                                new DirectoryChooserDialog.ChosenDirectoryListener() {
+                                    @Override
+                                    public void onChosenDir(String chosenDir) {
+                                        m_chosenDir2 = chosenDir;
+                                        Toast.makeText(
+                                                MainActivity.this, "Chosen directory: " +
+                                                        chosenDir, Toast.LENGTH_LONG).show();
+
+                                        editor.putString("EJDicPath", m_chosenDir2);
+                                        editor.commit();
+                                    }
+
+                                });
+
+                // Toggle new folder button enabling
+                directoryChooserDialog.setNewFolderEnabled(m_newFolderEnabled);
+                // Load directory chooser dialog for initial 'm_chosenDir' directory.
+                // The registered callback will be called upon final directory selection.
+                directoryChooserDialog.chooseDirectory(m_chosenDir2);
+                m_newFolderEnabled = !m_newFolderEnabled;
+            }
+
+
+        });
+
+        dirChooserButton3.setOnClickListener(new View.OnClickListener() {
+            private String m_chosenDir3 = "";
+            private boolean m_newFolderEnabled = false;
+            SharedPreferences pref = getSharedPreferences("config", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = pref.edit();
+
+            @Override
+            public void onClick(View v) {
+                // Create DirectoryChooserDialog and register a callback
+                DirectoryChooserDialog directoryChooserDialog =
+                        new DirectoryChooserDialog(MainActivity.this,
+                                new DirectoryChooserDialog.ChosenDirectoryListener() {
+                                    @Override
+                                    public void onChosenDir(String chosenDir) {
+                                        m_chosenDir3 = chosenDir;
+                                        Toast.makeText(
+                                                MainActivity.this, "Chosen directory: " +
+                                                        chosenDir, Toast.LENGTH_LONG).show();
+
+                                        editor.putString("JEDicPath", m_chosenDir3);
+                                        editor.commit();
+                                    }
+
+                                });
+
+                // Toggle new folder button enabling
+                directoryChooserDialog.setNewFolderEnabled(m_newFolderEnabled);
+                // Load directory chooser dialog for initial 'm_chosenDir' directory.
+                // The registered callback will be called upon final directory selection.
+                directoryChooserDialog.chooseDirectory(m_chosenDir3);
+                m_newFolderEnabled = !m_newFolderEnabled;
+            }
+
+
+        });
+
+        dirChooserButton4.setOnClickListener(new View.OnClickListener() {
+            private String m_chosenDir4 = "";
+            private boolean m_newFolderEnabled = false;
+            SharedPreferences pref = getSharedPreferences("config", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = pref.edit();
+
+            @Override
+            public void onClick(View v) {
+                // Create DirectoryChooserDialog and register a callback
+                DirectoryChooserDialog directoryChooserDialog =
+                        new DirectoryChooserDialog(MainActivity.this,
+                                new DirectoryChooserDialog.ChosenDirectoryListener() {
+                                    @Override
+                                    public void onChosenDir(String chosenDir) {
+                                        m_chosenDir4 = chosenDir;
+                                        Toast.makeText(
+                                                MainActivity.this, "Chosen directory: " +
+                                                        chosenDir, Toast.LENGTH_LONG).show();
+
+                                        editor.putString("EEDicPath", m_chosenDir4);
+                                        editor.commit();
+                                    }
+
+                                });
+
+                // Toggle new folder button enabling
+                directoryChooserDialog.setNewFolderEnabled(m_newFolderEnabled);
+                // Load directory chooser dialog for initial 'm_chosenDir' directory.
+                // The registered callback will be called upon final directory selection.
+                directoryChooserDialog.chooseDirectory(m_chosenDir4);
+                m_newFolderEnabled = !m_newFolderEnabled;
+            }
+
+
+        });
+    }
+/*  端末情報の表示
 
         String path = Environment.getExternalStorageDirectory().toString() + "/Android/data/com.amazon.kindle/files/dictionaries";
         File f = new File(path);
@@ -125,34 +240,11 @@ public class MainActivity extends Activity {
 
         SharedPreferences pref = getSharedPreferences("config", Context.MODE_PRIVATE);
 
-        if (model.equals("KFFOWI")) {    //  Kindle File (2015)
+            file1 = new File( pref.getString("JPDicPath","") );
+            file2 = new File( pref.getString("EJDicPath","") );
+            file3 = new File( pref.getString("JEDicPath","") );
+            file4 = new File( pref.getString("EEDicPath","") );
 
-            file1 = new File( pref.getString("JPDicPath",""));
-            file2 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/dictionaries/B005FNK002_Shogakukan_EJ.mobi");
-            file3 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/Books/B00DQB1G3K/B00DQB1G3K_EBOK.prc");
-            file4 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/dictionaries/B003WUYRGI_ODE_KCP.mobi");
-
-        } else if (model.equals("KFAPWA") | model.equals("KFAPWI")) {   //  Kindle File HDX 8.9inch (2013)
-
-            file1 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/dictionaries/Shogagkukan_JJ.mobi");
-            file2 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/dictionaries/Shogakukan_EJ.mobi");
-            file3 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/Books/B00DQB1G3K/B00DQB1G3K_EBOK.prc");
-            file4 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/dictionaries/B003WUYRGI_ODE_KCP.mobi");
-
-        } else if (model.equals("KFTHWA") | model.equals("KFTHWI")) {   //  Kindle File HDX 7inch (2013)
-
-            file1 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/Books/B005FNK020/B005FNK020_EBOK.prc");
-            file2 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/Books/B005FNK002/B005FNK002_EBOK.prc");
-            file3 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/Books/B00DQB1G3K/B00DQB1G3K_EBOK.prc");
-            file4 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/dictionaries/B003WUYRGI_ODE_KCP.mobi");
-        } else {
-
-            file1 = new File("");
-            file2 = new File("");
-            file3 = new File("");
-            file4 = new File("");
-
-        }
 
         Intent intent1 = new Intent();
         Intent intent2 = new Intent();
