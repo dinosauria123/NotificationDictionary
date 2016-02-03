@@ -39,6 +39,8 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sample_layout);
 
+// This codes comes from http://www.codeproject.com/Articles/547636/Android-Ready-to-use-simple
+
         Button dirChooserButton = (Button) findViewById(R.id.button2);
         dirChooserButton.setOnClickListener(new View.OnClickListener() {
             private String m_chosenDir = "";

@@ -2,39 +2,39 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\dinos\AndroidStudioProjects\NotificationDictionary2\Application\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.0\jars\classes.jar"
+        jar="C:\Users\dino\AndroidStudioProjects\NotificationDictionary2\Application\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.2"
         sha1="ddde541c289c8b816a8f8fd6c325d80788c522a6">
-        <dex dex="C:\Users\dinos\AndroidStudioProjects\NotificationDictionary2\Application\build\intermediates\pre-dexed\debug\classes-2a0eb95dd4db8f9c3bc486176cbe79ca34834770.jar" />
+        <dex dex="C:\Users\dino\AndroidStudioProjects\NotificationDictionary2\Application\build\intermediates\pre-dexed\debug\classes-98ab6644c34e3b1c80a7db5901b0c4900fc9d6e7.jar" />
     </item>
     <item
-        jar="C:\Users\dinos\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.1.0\support-annotations-23.1.0.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="92e3fc113ec3ee36b64603a38857b95700025633">
-        <dex dex="C:\Users\dinos\AndroidStudioProjects\NotificationDictionary2\Application\build\intermediates\pre-dexed\debug\support-annotations-23.1.0-3504ca8e752d20c53a90734f23bf6fd4e0a50a26.jar" />
-    </item>
-    <item
-        jar="C:\Users\dinos\AndroidStudioProjects\NotificationDictionary2\Application\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.0\jars\libs\internal_impl-23.1.0.jar"
+        jar="C:\Users\dino\AndroidStudioProjects\NotificationDictionary2\Application\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.0\jars\libs\internal_impl-23.1.0.jar"
         jumboMode="false"
         revision="23.0.2"
         sha1="8716243bf04bae8d6c9ca94d27b9a9be7236f0a3">
-        <dex dex="C:\Users\dinos\AndroidStudioProjects\NotificationDictionary2\Application\build\intermediates\pre-dexed\debug\internal_impl-23.1.0-84d7ec227623f4504b244359b033969d6400a59f.jar" />
+        <dex dex="C:\Users\dino\AndroidStudioProjects\NotificationDictionary2\Application\build\intermediates\pre-dexed\debug\internal_impl-23.1.0-347aad7df2bebc48c1c5d615f1d29e6402042aaa.jar" />
     </item>
     <item
-        jar="C:\Users\dinos\AndroidStudioProjects\NotificationDictionary2\Application\build\intermediates\exploded-aar\com.android.support\gridlayout-v7\23.1.0\jars\classes.jar"
+        jar="C:\Users\dino\AppData\Local\Android\sdk1\extras\android\m2repository\com\android\support\support-annotations\23.1.0\support-annotations-23.1.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="92e3fc113ec3ee36b64603a38857b95700025633">
+        <dex dex="C:\Users\dino\AndroidStudioProjects\NotificationDictionary2\Application\build\intermediates\pre-dexed\debug\support-annotations-23.1.0-f486a7598b19f5093dd4e3b24f84a0cb3a6d3847.jar" />
+    </item>
+    <item
+        jar="C:\Users\dino\AndroidStudioProjects\NotificationDictionary2\Application\build\intermediates\exploded-aar\com.android.support\gridlayout-v7\23.1.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.2"
         sha1="3713f30726299231eddfb206043ebb72a2519b6f">
-        <dex dex="C:\Users\dinos\AndroidStudioProjects\NotificationDictionary2\Application\build\intermediates\pre-dexed\debug\classes-ae5c91bc8a8b935d6afbd310a0399d311f7d6596.jar" />
+        <dex dex="C:\Users\dino\AndroidStudioProjects\NotificationDictionary2\Application\build\intermediates\pre-dexed\debug\classes-d04cf33efb66e326e2b2f573fbcf7fb8d1a0683a.jar" />
     </item>
     <item
-        jar="C:\Users\dinos\AndroidStudioProjects\NotificationDictionary2\Application\build\intermediates\exploded-aar\com.android.support\cardview-v7\23.1.0\jars\classes.jar"
+        jar="C:\Users\dino\AndroidStudioProjects\NotificationDictionary2\Application\build\intermediates\exploded-aar\com.android.support\cardview-v7\23.1.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.2"
         sha1="d96886efea7cc74fbb3abd0e3b51d5638fc57be0">
-        <dex dex="C:\Users\dinos\AndroidStudioProjects\NotificationDictionary2\Application\build\intermediates\pre-dexed\debug\classes-a4c8a68ac439624928fe5b5c67b7463a2333e2cb.jar" />
+        <dex dex="C:\Users\dino\AndroidStudioProjects\NotificationDictionary2\Application\build\intermediates\pre-dexed\debug\classes-fdd546aab48ece3c2219b16c7c659f3fdbf7224f.jar" />
     </item>
 
 </items>
