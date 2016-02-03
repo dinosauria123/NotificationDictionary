@@ -4,8 +4,10 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
@@ -60,6 +62,7 @@ public class MainActivity extends Activity {
                                                 MainActivity.this, "Chosen directory: " +
                                                         chosenDir, Toast.LENGTH_LONG).show();
                                     }
+
                                 });
                 // Toggle new folder button enabling
                 directoryChooserDialog.setNewFolderEnabled(m_newFolderEnabled);
@@ -67,6 +70,11 @@ public class MainActivity extends Activity {
                 // The registered callback will be called upon final directory selection.
                 directoryChooserDialog.chooseDirectory(m_chosenDir);
                 m_newFolderEnabled = !m_newFolderEnabled;
+
+                SharedPreferences pref = getSharedPreferences("config", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = pref.edit();
+                editor.putString("JPDicPath",m_chosenDir.toString());
+                editor.commit();
             }
         });
 
@@ -96,11 +104,12 @@ public class MainActivity extends Activity {
                 });
         AlertDialog alertDialog = alertDialogBuilder.create();
         alertDialog.show();
-    }
 
-    /**
-     * Send a sample notification using the NotificationCompat API.
-     */
+    }
+        /**
+         * Send a sample notification using the NotificationCompat API.
+         */
+
     public void sendNotification(View view) {
 
         // BEGIN_INCLUDE(build_action)
@@ -114,9 +123,11 @@ public class MainActivity extends Activity {
         File file3;
         File file4;
 
+        SharedPreferences pref = getSharedPreferences("config", Context.MODE_PRIVATE);
+
         if (model.equals("KFFOWI")) {    //  Kindle File (2015)
 
-            file1 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/dictionaries/B005FNK020_JP-JP.mobi");
+            file1 = new File( pref.getString("JPDicPath",""));
             file2 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/dictionaries/B005FNK002_Shogakukan_EJ.mobi");
             file3 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/Books/B00DQB1G3K/B00DQB1G3K_EBOK.prc");
             file4 = new File("/storage/sdcard0/Android/data/com.amazon.kindle/files/dictionaries/B003WUYRGI_ODE_KCP.mobi");
